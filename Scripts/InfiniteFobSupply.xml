@@ -1,0 +1,12 @@
+<!-- THIS IS A COMMENT -->
+<wargamepatch>
+	<!-- Increases FOB supply from 16000 to 999999 -->
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TModuleModernWarfareSupplyDescriptor" name="infiniteFob">
+		<matchconditions>
+			<matchcondition property="SupplyCapacity">16000</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="SupplyCapacity" type="Int32">999999</change>
+		</changes>
+	</ndfpatch>
+</wargamepatch>

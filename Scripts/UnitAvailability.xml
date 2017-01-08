@@ -1,0 +1,16 @@
+<!-- THIS IS A COMMENT -->
+<wargamepatch>
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="unitAvail">
+		<changes>
+			<!-- I have commented out changes to MaxDeployableAmount because it will make the AI also have infinite units. -->
+			<!-- <change operation="set" property="MaxDeployableAmount" key="0" type="Int32">9999</change>
+			<change operation="set" property="MaxDeployableAmount" key="1" type="Int32">9999</change>
+			<change operation="set" property="MaxDeployableAmount" key="2" type="Int32">9999</change>
+			<change operation="set" property="MaxDeployableAmount" key="3" type="Int32">9999</change>
+			<change operation="set" property="MaxDeployableAmount" key="4" type="Int32">9999</change> -->
+			<!-- Each key is number of units per veterancy, if you haven't figured that out already. 0 = Rookie, 5 = Elite, etc. -->
+			<change operation="set" property="MaxPacks" type="UInt32">50</change>
+			<!-- Changes Number of Deck Cards to 9. -->
+		</changes>
+	</ndfpatch>
+</wargamepatch>

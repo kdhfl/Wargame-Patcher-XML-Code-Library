@@ -1,0 +1,15 @@
+<!-- THIS IS A COMMENT -->
+<wargamepatch>
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TModernWarfareSupplyDescriptor" name="airSupply">
+		<matchconditions>
+			<matchcondition property="__order">last</matchcondition>
+			<!-- There are two instances of this class, __order 1 = second instance. (Computers always start at 0.) -->
+		</matchconditions>
+		<changes>
+			<change operation="set" property="FuelSupplyBySecond">30000</change>
+			<change operation="set" property="HealthSupplyBySecond">100</change>
+			<change operation="set" property="AmmunitionSupplyBySecond">25000</change>
+			<!-- Original values were 30, 0.1, and 25 IIRC. I multiplied them by 1000 to give planes an instant reload time. -->
+		</changes>
+	</ndfpatch>
+</wargamepatch>

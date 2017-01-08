@@ -1,0 +1,131 @@
+<!-- THIS IS A COMMENT -->
+<!-- Changes Eurocorps, Scandinavia, and Eastern Bloc to multiply the number of units by 99900 -->
+<wargamepatch>
+	<!-- All decks either have 0 (null), 5, or 10 activation points. I'm setting the ones with 5 and 10 to 0 since we can't set anything to null with this program. -->
+   <ndfcreate ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TDeckRulesModifier" name="newModifier"></ndfcreate>
+
+   <ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TDeckRulesModifier" name="newModifierEdits">
+      <matchconditions>
+         <matchcondition property="__order">last</matchcondition>
+      </matchconditions>
+      <changes>
+         <change operation="set" property="Availability"></change>
+         <change operation="select" property="Availability"></change>
+         <change operation="add" type="map">
+            <map>
+               <key type="Int32">3</key>
+               <value type="Int32">99900</value>
+            </map>
+         </change>
+         <change operation="add" type="map">
+            <map>
+               <key type="Int32">10</key>
+               <value type="Int32">99900</value>
+            </map>
+         </change>
+         <change operation="add" type="map">
+            <map>
+               <key type="Int32">9</key>
+               <value type="Int32">99900</value>
+            </map>
+         </change>
+         <change operation="add" type="map">
+            <map>
+               <key type="Int32">6</key>
+               <value type="Int32">99900</value>
+            </map>
+         </change>
+         <change operation="add" type="map">
+            <map>
+               <key type="Int32">13</key>
+               <value type="Int32">99900</value>
+            </map>
+         </change>
+         <change operation="add" type="map">
+            <map>
+               <key type="Int32">8</key>
+               <value type="Int32">99900</value>
+            </map>
+         </change>
+         <change operation="add" type="map">
+            <map>
+               <key type="Int32">11</key>
+               <value type="Int32">99900</value>
+            </map>
+         </change>
+         <change operation="add" type="map">
+            <map>
+               <key type="Int32">7</key>
+               <value type="Int32">99900</value>
+            </map>
+         </change>
+         <change operation="add" type="map">
+            <map>
+               <key type="Int32">12</key>
+               <value type="Int32">99900</value>
+            </map>
+         </change>
+         <change operation="unselect" />
+      </changes>
+   </ndfpatch>
+
+   <ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TShowRoomDeckRuleManager" name="euroToNewModifier">
+      <matchconditions>
+         <matchcondition property="__order">first</matchcondition>
+      </matchconditions>
+      <changes>
+         <change operation="set" property="ModifiersForCoalition" key="EURO" type="ObjectReference">
+            <reference table="TDeckRulesModifier">
+               <matchconditions>
+                  <matchcondition property="__order">last</matchcondition>
+               </matchconditions>
+            </reference>
+         </change>
+      </changes>
+   </ndfpatch> 
+
+   <ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TShowRoomDeckRuleManager" name="scandiToNewModifier">
+      <matchconditions>
+         <matchcondition property="__order">first</matchcondition>
+      </matchconditions>
+      <changes>
+         <change operation="set" property="ModifiersForCoalition" key="SCAND" type="ObjectReference">
+            <reference table="TDeckRulesModifier">
+               <matchconditions>
+                  <matchcondition property="__order">last</matchcondition>
+               </matchconditions>
+            </reference>
+         </change>
+      </changes>
+   </ndfpatch> 
+
+   <ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TShowRoomDeckRuleManager" name="easternToNewModifier">
+      <matchconditions>
+         <matchcondition property="__order">first</matchcondition>
+      </matchconditions>
+      <changes>
+         <change operation="set" property="ModifiersForCoalition" key="NSWP" type="ObjectReference">
+            <reference table="TDeckRulesModifier">
+               <matchconditions>
+                  <matchcondition property="__order">last</matchcondition>
+               </matchconditions>
+            </reference>
+         </change>
+      </changes>
+   </ndfpatch> 
+
+   <ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TShowRoomDeckRuleManager" name="redToNewModifier">
+      <matchconditions>
+         <matchcondition property="__order">first</matchcondition>
+      </matchconditions>
+      <changes>
+         <change operation="set" property="ModifiersForCoalition" key="REDDRAG" type="ObjectReference">
+            <reference table="TDeckRulesModifier">
+               <matchconditions>
+                  <matchcondition property="__order">last</matchcondition>
+               </matchconditions>
+            </reference>
+         </change>
+      </changes>
+   </ndfpatch> 
+</wargamepatch>

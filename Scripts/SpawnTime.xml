@@ -1,0 +1,79 @@
+<!-- THIS IS A COMMENT -->
+<wargamepatch>
+	<!-- All units except Naval and Planes. I don'w want to give planes a spawn time, because it is for each one. (If I have 2 planes with a spawn time of 10, the first one will come 10 seconds later, and the second one 20 seconds later. I didn't write commands for naval just yet because naval has boats, helicopters, and planes. Commands for naval are at the bottom.) I am aware that there is a much shorter way to write this code, but I expanded it just in case I ever wanted to set spawn times by category. -->
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="logSpawnTime">
+		<matchconditions>
+			<matchcondition property="Factory">3</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="ProductionTime" type="Int32">1</change>
+			<!-- ProductionTime = spawn time, duh. I didn't set it to 0 because everything will spawn at once and might lag or even crash the game. Since the type is an integer, you can't put a decimal like 0.5. -->
+		</changes>
+	</ndfpatch>
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="infSpawnTime">
+		<matchconditions>
+			<matchcondition property="Factory">6</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="ProductionTime" type="Int32">1</change>
+		</changes>
+	</ndfpatch>
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="recSpawnTime">
+		<matchconditions>
+			<matchcondition property="Factory">10</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="ProductionTime" type="Int32">1</change>
+		</changes>
+	</ndfpatch>
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="supSpawnTime">
+		<matchconditions>
+			<matchcondition property="Factory">13</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="ProductionTime" type="Int32">1</change>
+		</changes>
+	</ndfpatch>
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="heliSpawnTime">
+		<matchconditions>
+			<matchcondition property="Factory">11</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="ProductionTime" type="Int32">1</change>
+		</changes>
+	</ndfpatch>
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="vehSpawnTime">
+		<matchconditions>
+			<matchcondition property="Factory">8</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="ProductionTime" type="Int32">1</change>
+		</changes>
+	</ndfpatch>
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="tanSpawnTime">
+		<matchconditions>
+			<matchcondition property="Factory">9</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="ProductionTime" type="Int32">1</change>
+		</changes>
+	</ndfpatch>
+	
+	<!-- Naval units spawn time to 1 except planes -->
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="navalHeliUnits">
+		<matchconditions>
+			<matchcondition property="ProductionTime">5</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="ProductionTime" type="Int32">1</change>
+		</changes>
+	</ndfpatch>
+	<ndfpatch ndf="pc\ndf\patchable\gfx\everything.ndfbin" table="TUniteAuSolDescriptor" name="navalUnits">
+		<matchconditions>
+			<matchcondition property="ProductionTime">10</matchcondition>
+		</matchconditions>
+		<changes>
+			<change operation="set" property="ProductionTime" type="Int32">1</change>
+		</changes>
+	</ndfpatch>
+</wargamepatch>
